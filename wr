@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# WALLPAPERROTATE
+# Randomly rotates wallpaper of user using feh.
+
+if ! [ -x "$(command -v feh)" ]; then
+  echo 'Error: feh is not installed! https://feh.finalrewind.org/' >&2
+  exit 1
+fi
+
+PWD=${1:-$(pwd)}
+FEHARGS=${2:-'--bg-fill'}
+
+LIST=`ls $1`
+ITEMS=`echo "$LIST" | wc | awk '{print $1}'`
+RND=`echo "$RANDOM % $ITEMS + 1" | bc`
+WALLPAPER=`ls $1 | head -n $RND | tail -n 1`
+
+feh $FEHARGS $PWD/$WALLPAPER
