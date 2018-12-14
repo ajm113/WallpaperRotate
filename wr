@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# WALLPAPERROTATE
+# Wallpaper Rotate
 # Randomly rotates wallpaper of user using feh.
 
 if ! [ -x "$(command -v feh)" ]; then
