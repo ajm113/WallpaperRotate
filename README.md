@@ -1,4 +1,4 @@
-# WALLPAPERROTATE
+# WallpaperRotate
 *Randomly rotates wallpaper of user using feh.*
 
 ## Platforms
